@@ -2,10 +2,10 @@ A Template To Help Writing Unix Python CLI
 --------------------------------------
 
 
-# WIP #
-
-
 Inspired by [this thread](http://nixers.net/showthread.php?tid=542).
+
+
+Read the files for more information
 
 
 #Dependencies:
