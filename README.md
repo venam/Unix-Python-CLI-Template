@@ -7,6 +7,13 @@ Inspired by [this thread](http://nixers.net/showthread.php?tid=542).
 
 Read the files for more information
 
+#What's Included
+
+* command line argument parsing
+* tab completion
+* interpreter mode
+* zsh completion example
+
 
 #Dependencies:
 
