@@ -10,6 +10,7 @@ Read the files for more information
 #What's Included
 
 * command line argument parsing
+* colors
 * tab completion
 * interpreter mode
 * zsh completion example

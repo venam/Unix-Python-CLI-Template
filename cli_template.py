@@ -22,6 +22,14 @@ import readline, completer #for tab completion
 import sys
 
 
+#sweet sweet colors
+HEADER = '\033[95m'
+OKBLUE = '\033[94m'
+OKGREEN = '\033[92m'
+WARNING = '\033[93m'
+FAIL = '\033[91m'
+ENDC = '\033[0m'
+
 def help_text(rest):
     print "this is a help text in interactive mode"
     return ''
@@ -64,7 +72,7 @@ readline.set_completer(comp.complete)
 
 def interactive_loop():
     while 1:
-        sys.stdout.write(comp.mode+"> ")
+        sys.stdout.write(HEADER+comp.mode+OKGREEN+" > "+ENDC)
         user_input = raw_input()
         splitted_command = user_input.partition(' ')
         command, rest = splitted_command[0], splitted_command[2]
