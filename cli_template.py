@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-#she bangs well...
+# she bangs well...
 """Unix Python Cli Template.
 
 Usage:
@@ -15,20 +15,22 @@ Options:
   -v --version     Show version.
 """
 
-from docopt import docopt #for nifty arg parsing
-#for the docopt syntax check http://docopt.org/
-import readline, completer #for tab completion
+from docopt import docopt  # for nifty arg parsing
+# for the docopt syntax check http://docopt.org/
+import readline
+import completer  # for tab completion
 
 import sys
 
 
-#sweet sweet colors
+# sweet sweet colors
 HEADER = '\033[95m'
 OKBLUE = '\033[94m'
 OKGREEN = '\033[92m'
 WARNING = '\033[93m'
 FAIL = '\033[91m'
 ENDC = '\033[0m'
+
 
 def help_text(rest):
     print "this is a help text in interactive mode"
@@ -52,17 +54,17 @@ def other(rest):
 
 
 COMMANDS = {
-        'menu' : {
-            'help' : help_text,
-            'config': config,
-            'exit': exit_program
-            },
-        'inside' : {
-            'help': help_text,
-            'other': other,
-            'exit': exit_program
-            }
+    'menu': {
+        'help': help_text,
+        'config': config,
+        'exit': exit_program
+        },
+    'inside': {
+        'help': help_text,
+        'other': other,
+        'exit': exit_program
         }
+    }
 DEFAULT_MODE = 'menu'
 comp = completer.Completer(DEFAULT_MODE, COMMANDS)
 readline.set_completer_delims(' \t\n;')
@@ -85,7 +87,8 @@ def interactive_loop():
 if __name__ == '__main__':
     arguments = docopt(__doc__, version='Unix Cli Template 0.1')
     print "Going to print a debug of the arguments passed"
-    print(arguments) #returns a dictionary/hash with the options filled by the user
+    # returns a dictionary/hash with the options filled by the user
+    print(arguments)
     print "End of printing"
     """
     For instance:
@@ -100,7 +103,7 @@ if __name__ == '__main__':
     'test': True,
     'this': True}
     """
-    #here goes the parsing of arguments
-    if arguments['--interactive'] == True:
+    # here goes the parsing of arguments
+    if arguments['--interactive'] is True:
         print "Entering interactive mode, press <TAB> for completion"
         interactive_loop()

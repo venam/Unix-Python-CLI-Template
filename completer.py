@@ -1,7 +1,11 @@
 # -*- coding: UTF-8 -*-
 
-import re,os,readline
-#---complete the path or commands---#
+
+import re
+import os
+import readline
+# ---complete the path or commands--- #
+
 
 class Completer(object):
     def __init__(self, default_mode, commands):
@@ -24,7 +28,7 @@ class Completer(object):
         dirname, rest = os.path.split(path)
         tmp = dirname if dirname else '.'
         res = [os.path.join(dirname, p)
-                for p in self._listdir(tmp) if p.startswith(rest)]
+               for p in self._listdir(tmp) if p.startswith(rest)]
         if len(res) > 1 or not os.path.exists(path):
             return res
         if os.path.isdir(path):
@@ -56,6 +60,8 @@ class Completer(object):
             if args:
                 return (impl(args) + [None])[state]
             return [cmd + ''][state]
-        results = [c + '' for c in self.commands[self.mode].keys() if c.startswith(cmd)] + [None]
+        results = [
+            c + '' for c in self.commands[self.mode].keys()
+            if c.startswith(cmd)] + [None]
 
         return results[state]
